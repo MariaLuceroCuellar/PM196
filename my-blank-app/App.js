@@ -1,19 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
-
-    const Texto = (props)=>{
-      const {children} = props;
+import React, {useState} from 'react';
+    const Texto = ()=>{
+      const [contenido, setContenido] = useState('Hola Mundo');
+      const actualizarContenido = () => {
+        setContenido('¡Contenido actualizado!');
+      }
       return (
-        <Text> {children} </Text>
+        <Text onPress={actualizarContenido}> {contenido} </Text>
       )
       
     }
 export default function App() {
+  const [contenido, setContenido] = useState('Click me');
+  const actualizarContenido = () => {
+    setContenido('holiii');
+  }
   return (
     <View style={styles.container}>
-      <Texto> "Hola" </Texto>
-      <Texto> "Mundo" </Texto>
-      <Button title="Click Me" />
+      <Texto>  </Texto>
+      <Button title={contenido} onPress={actualizarContenido} />
       <StatusBar style="auto" />
     </View>
   );
