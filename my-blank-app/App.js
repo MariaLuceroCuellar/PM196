@@ -1,19 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
-    const Texto = ()=>{
+    const Texto = (props)=>{
+      const {contenido} = props;
       return (
-        <Text>Hola Mundo </Text>
+        <Text> {contenido} </Text>
       )
       
     }
 export default function App() {
   return (
     <View style={styles.container}>
-      <Texto />
+      <Texto contenido = "Hola"/>
+      <Texto contenido = "¿Comó estas?"/>
+      <Texto contenido = "Mi nombre es Lucero"/>
       <Text>Open up App.js to start working on your app!</Text>
       <Button title="Click Me" />
-      <Texto />
       <StatusBar style="auto" />
     </View>
   );
